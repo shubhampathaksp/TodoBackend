@@ -9,7 +9,8 @@ const Connection = () =>{
 
     const MONGODB_URL = `mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.gllswph.mongodb.net/`
 
-    mongoose.connect(MONGODB_URL,{useNewUrlParser: true, useUnifiedTopology:true});
+    mongoose.connect(MONGODB_URL,{ useNewUrlParser: true,
+        useUnifiedTopology: true});
     mongoose.connection.on('connected',() =>{
         console.log('Database connected Successfully');
     })
