@@ -3,6 +3,8 @@ import cors from 'cors';
 import Routes from './routes/route.js';
 import bodyParser from 'body-parser';
 import Connection from './database/db.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 
@@ -12,7 +14,7 @@ app.use(bodyParser.json({extended: true}));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', Routes);
 
-const port = 8000;
+const port = process.env.PORT || 5000;
 
 Connection();
 app.listen(port,()=>{
